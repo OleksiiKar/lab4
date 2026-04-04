@@ -2,16 +2,16 @@ package textPackage;
 
 import lombok.Getter;
 
-public class Punctuation {
+public class Punctuation implements textElements{
     @Getter
-    private char punctuation;
+    private final String punctuation;
 
-    public Punctuation(char punctuation){
+    public Punctuation(String punctuation){
         this.punctuation = punctuation;
     }
 
     @Override
     public String toString() {
-        return String.valueOf(punctuation);
+        return punctuation;
     }
 }
