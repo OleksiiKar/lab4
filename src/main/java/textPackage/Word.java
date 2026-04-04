@@ -1,5 +1,6 @@
 package textPackage;
 
+import lombok.Getter;
 import lombok.NonNull;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Word implements Comparable<Word>{
+    @Getter
     private final List<Letter> letters = new ArrayList<>();
 
     public Word(@NonNull String word){
