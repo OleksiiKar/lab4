@@ -2,7 +2,7 @@ package textPackage;
 
 import lombok.Getter;
 
-public class Punctuation implements textElements{
+public class Punctuation implements textElements {
     @Getter
     private final String punctuation;
 
