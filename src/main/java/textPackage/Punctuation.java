@@ -1,19 +1,17 @@
 package textPackage;
 
-
 import lombok.Getter;
-import lombok.Setter;
 
 public class Punctuation {
-    @Getter @Setter
-    private char myPunctuation;
+    @Getter
+    private char punctuation;
 
-    public Punctuation(char myPunctuation){
-        this.myPunctuation = myPunctuation;
+    public Punctuation(char punctuation){
+        this.punctuation = punctuation;
     }
 
     @Override
     public String toString() {
-        return String.valueOf(myPunctuation);
+        return String.valueOf(punctuation);
     }
 }

@@ -1,17 +1,16 @@
 package textPackage;
 
 import lombok.Getter;
-import lombok.Setter;
 
 public class Letter {
-    @Getter @Setter
-    private char myChar;
+    @Getter
+    private char chars;
     public Letter(char chars){
-        this.myChar = chars;
+        this.chars = chars;
     }
 
     @Override
     public String toString(){
-        return String.valueOf(myChar);
+        return String.valueOf(chars);
     }
 }
