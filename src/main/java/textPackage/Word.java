@@ -4,9 +4,10 @@ import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Word implements Comparable<Word>{
-    private List<Letter> letters = new ArrayList<>();
+    private final List<Letter> letters = new ArrayList<>();
 
     public Word(@NonNull String word){
         for(char i:word.toCharArray()){
@@ -26,5 +27,13 @@ public class Word implements Comparable<Word>{
     @Override
     public int compareTo(@NonNull Word o) {
         return this.toString().compareTo(o.toString());
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (this==obj) return true;
+        if (obj==null || getClass()!=obj.getClass()) return false;
+        Word other = (Word) obj;
+        return Objects.equals(this.letters, other.letters);
     }
 }
