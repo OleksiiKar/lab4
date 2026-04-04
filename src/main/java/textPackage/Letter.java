@@ -23,4 +23,8 @@ public class Letter {
         Letter other = (Letter) obj;
         return this.chars==other.chars;
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(chars);
+    }
 }

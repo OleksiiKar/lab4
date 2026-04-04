@@ -46,4 +46,15 @@ public class Sentence implements Comparable<Sentence>, textElements{
     public int compareTo(@NonNull Sentence other) {
         return this.getFirstWord().compareTo(other.getFirstWord());
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sentence sentence = (Sentence) o;
+        return java.util.Objects.equals(splitSentence, sentence.splitSentence);
+    }
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(splitSentence);
+    }
 }

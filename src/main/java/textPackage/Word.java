@@ -38,4 +38,8 @@ public class Word implements Comparable<Word>, textElements {
         Word other = (Word) obj;
         return Objects.equals(this.letters, other.letters);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(letters);
+    }
 }
