@@ -1,10 +1,13 @@
 package lab4;
+import textPackage.Sentence;
+import textPackage.Word;
+
 import java.util.Objects;
 public class Airplane {
     /** The model name of the airplane. */
-    private String model;
+    private Sentence model;
     /** The manufacturer of the airplane. */
-    private String manufacturer;
+    private Word manufacturer;
     /** The top speed of the airplane in kilometers per hour (km/h). */
     private Integer topSpeed;
     /** The maximum altitude the airplane can reach in meters. */
@@ -20,8 +23,8 @@ public class Airplane {
      * @param maxAltitude  receive and set the maximum altitude of the airplane in meters
      * @param payload      receive and set the payload capacity of the airplane in tonnes
      */
-    public Airplane(String model,
-                    String manufacturer,
+    public Airplane(Sentence model,
+                    Word manufacturer,
                     Integer topSpeed,
                     Integer maxAltitude,
                     Double payload){
@@ -73,14 +76,14 @@ public class Airplane {
      * Getter for model name of the airplane
      * @return name of sample
      */
-    public String getModel(){
+    public Sentence getModel(){
         return this.model;
     }
     /**
      * Getter for manufacturer of the airplane
      * @return manufacturer of sample
      */
-    public String getManufacturer(){
+    public Word getManufacturer(){
         return this.manufacturer;
     }
     /**
@@ -108,14 +111,14 @@ public class Airplane {
      * Sets the model of the airplane
      * @param model the new model to set
      */
-    public void setModel(String model){
+    public void setModel(Sentence model){
         this.model = model;
     }
     /**
      * Sets the manufacturer of the airplane
      * @param manufacturer the new manufacturer to set
      */
-    public void setManufacturer(String manufacturer){
+    public void setManufacturer(Word manufacturer){
         this.manufacturer = manufacturer;
     }
     /**

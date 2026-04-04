@@ -1,6 +1,7 @@
 package textPackage;
 
 import lombok.Getter;
+import lombok.NonNull;
 
 public class Punctuation implements textElements {
     @Getter
