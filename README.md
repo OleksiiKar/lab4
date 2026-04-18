@@ -58,3 +58,4 @@ src/
 ---
 
 ## Відео роботи програми
+https://youtu.be/78AHEq0HBKk
