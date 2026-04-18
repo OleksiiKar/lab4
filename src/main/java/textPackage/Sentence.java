@@ -8,11 +8,22 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Represents a sentence as a list of elements (words and punctuation).
+ */
 public class Sentence implements Comparable<Sentence>, textElements{
+    /** List of sentence elements (Word or Punctuation). */
     @Getter
     private final List<textElements> splitSentence = new ArrayList<>();
 
+    /**
+     * Constructor using regular expressions to split a sentence into words and marks.
+     *
+     * @param sentences the input sentence string.
+     */
     public Sentence(@NonNull String sentences){
+        // Group 1: Words (includes hyphens and Cyrillic/Latin characters)
+        // Group 2: Internal punctuation (spaces, commas, dashes, etc.)
         String regex = "([a-zA-Zа-яА-ЯіІїЇєЄґҐ0-9-]+)|([\\s,:—]+)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(sentences);
@@ -26,6 +37,11 @@ public class Sentence implements Comparable<Sentence>, textElements{
             }
         }
     }
+    /**
+     * Helper method to retrieve the first word of the sentence for comparison.
+     *
+     * @return the first Word found as a string, or an empty string if none.
+     */
     private String getFirstWord(){
         for (textElements el:splitSentence){
             if (el instanceof Word){
@@ -42,6 +58,9 @@ public class Sentence implements Comparable<Sentence>, textElements{
         }
         return sb.toString();
     }
+    /**
+     * Compares sentences based on their first word for sorting.
+     */
     @Override
     public int compareTo(@NonNull Sentence other) {
         return this.getFirstWord().compareTo(other.getFirstWord());
